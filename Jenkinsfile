@@ -30,9 +30,9 @@ pipeline {
                     passwordVariable: 'JFROG_TOKEN'
                 )]) {
                     sh '''
-                    curl -u $JFROG_USER:$JFROG_TOKEN \
+                    curl -f -u $JFROG_USER:$JFROG_TOKEN \
                     -T target/java-maven-app-1.0.jar \
-                    $JFROG_URL/artifactory/maven-releases/java-maven-app-${BUILD_NUMBER}.jar
+                    https://rohithganisetti.jfrog.io/artifactory/maven-releases/java-maven-app-${BUILD_NUMBER}.jar
                     '''
                 }
             }
