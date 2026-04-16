@@ -31,8 +31,8 @@ pipeline {
                 )]) {
                     sh '''
                     curl -f -u $JFROG_USER:$JFROG_TOKEN \
-                    -T target/java-maven-app-1.0.jar \
-                    https://rohithganisetti.jfrog.io/artifactory/maven-releases/java-maven-app-${BUILD_NUMBER}.jar
+                    -T target/java-maven-app-1.0.war \
+                    https://rohithganisetti.jfrog.io/artifactory/maven-releases/java-maven-app-${BUILD_NUMBER}.war
                     '''
                 }
             }
